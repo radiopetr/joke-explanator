@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>joke eplanator</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+	function explainThis(){
+		console.log('svdf')
+	}
+</script>
+
+<textarea type="text" id="question" value="">
+</textarea><br>
+<button onclick="explainThis()">Click me</button>
+
+<p id="explanation"></p>
+
+<script>
+//http://www.wordgenerator.net/random-sentence-generator.php
+//http://www.springhole.net/writing_roleplaying_randomators/character-obstacles.htm
+function explainThis() {
+    var jokeID = document.getElementById("question").value.hashCode()
+    console.log(jokeID)
+    if (jokeID<0 || jokeID>49){
+      jokeID = 0;
+    }
+    document.getElementById("explanation").innerHTML = jokes[jokeID];
+}
+
+String.prototype.hashCode = function() {
+  var hash = 0, i, chr;
+  if (this.length === 0) return hash;
+  for (i = 0; i < this.length; i++) {
+    chr   = this.charCodeAt(i);
+    hash  += 37*chr*(i%13+1);
+    hash |= 0; // Convert to 32bit integer
+  }
+  return (Math.abs(hash))%50;
+};
+
+
+var jokes=["The joke is that someone is afraid of change.",
+"The joke is that someone is afraid of what's out there.",
+"The joke is that someone is afraid of disappointing everyone else.",
+"The joke is that someone is missing vital information.",
+"The joke is that someone is overlooking the root of the problem.",
+"The joke is that someone is emotionally exhausted.",
+"The joke is that someone doesn't know how to get in.",
+"The joke is that someone planned to use something that is no longer available.",
+"The joke is that someone can't get others to work together.",
+"The joke is that someone is afraid of failure.",
+"The joke is that someone planned to take a route that is no longer passable.",
+"The joke is that someone doesn't have enough influence.",
+"The joke is that someone is afraid of the unknown.",
+"The joke is that someone needs help from someone that is hard to contact.",
+"The joke is that someone is stuck in a contract.",
+"The joke is that someone is unwilling to reach out for help.",
+"The joke is that someone needs something that has gone missing.",
+"The joke is that someone doesn't know of anyone who can help.",
+"The joke is that someone is sick.",
+"The joke is that someone's activities are being monitored.",
+"The joke is that someone is afraid of the unknown.",
+"The joke is that someone isn't seeing the big picture.",
+"The joke is that someone has a very tight schedule.",
+"The joke is that someone can't get others to work together.",
+"The joke is that someone doesn't know the way.",
+"The joke is that someone is afraid of humiliation.",
+"The joke is that someone is hampered by bad weather conditions.",
+"The joke is that someone is afraid of failure.",
+"The joke is that someone is afraid of retribution.",
+"The joke is that someone is afraid of being judged.",
+"The joke is that someone is emotionally exhausted.",
+"The joke is that someone has a reputation for impulsiveness.",
+"The joke is that someone is stuck on making a dead-end plan work.",
+"The joke is that someone doesn't have a way in.",
+"The joke is that someone doesn't know the way.",
+"The joke is that someone doesn't know how to get in.",
+"The joke is that someone is unfamiliar with the place.",
+"The joke is that someone's activities are being monitored.",
+"The joke is that someone needs Something that is extremely expensive.",
+"The joke is that someone is unwilling to reach out for help.",
+"The joke is that someone is faced with a difficult choice.",
+"The joke is that someone needs something that was stolen.",
+"The joke is that someone is physically exhausted.",
+"The joke is that someone can't get others to work together.",
+"The joke is that someone is afraid of hurting others.",
+"The joke is that someone is afraid of disappointing others.",
+"The joke is that someone is afraid of getting hurt.",
+"The joke is that someone is afraid of change.",
+"The joke is that someone isn't sure what's real and what isn't.",
+"The joke is that someone is afraid of being judged."]
+
+</script>
+
+</body>
+</html>
